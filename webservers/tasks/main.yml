@@ -1,0 +1,20 @@
+---
+# tasks file for webservers
+#
+- name: Create a user apache
+  ansible.builtin.user:
+    name: apache
+    shell: /bin/bash
+    groups: wheel
+    append: yes
+
+- name: create a Group apache 
+  ansible.builtin.group:
+    name: apache
+    state: present
+
+- name: Download apache tomcat tar.gz
+  get_url:
+    url: {{ apache_url }}
+    dest: /opt/
+    mode: '770'

@@ -1,0 +1,7 @@
+---
+- hosts: ansible-master
+  remote_user: "{{remote_user}}"
+  sudo: yes
+  gather_facts: false
+  roles:
+    - webservers
