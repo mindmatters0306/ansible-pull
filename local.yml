@@ -1,6 +1,6 @@
 ---
-- hosts: ansible-master
-  remote_user: "{{remote_user}}"
+- hosts: localhost
+  connection: local
   sudo: yes
   gather_facts: false
   roles:
